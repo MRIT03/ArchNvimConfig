@@ -11,6 +11,8 @@ require("lazy").setup({
         dependencies = { {'nvim-lua/plenary.nvim'} }
     },
 
+
+    { 'echasnovski/mini.nvim', version = false }, -- A set of modules, including animations
     -- Tokyo Night theme
     'folke/tokyonight.nvim',
 
@@ -56,6 +58,20 @@ require("lazy").setup({
     -- Debugging tools
     'nvim-lua/plenary.nvim',
     'mfussenegger/nvim-dap',
+-- Core Debugger Plugin (DAP)
+  { 'mfussenegger/nvim-dap' },
+
+  -- Optional: DAP UI for a better interface
+ -- DAP UI for a better interface
+  {
+    'rcarriga/nvim-dap-ui',
+    dependencies = { 'nvim-neotest/nvim-nio' }, -- Add the nvim-nio dependency
+  },
+  -- Optional: DAP Virtual Text for inline virtual text during debugging
+  { 'theHamsta/nvim-dap-virtual-text' },
+
+  -- Optional: Install debuggers automatically via Mason
+  { 'jay-babu/mason-nvim-dap.nvim', dependencies = { 'williamboman/mason.nvim', 'mfussenegger/nvim-dap' } },
 
     -- Mason LSP support (repeated as dependencies)
     'williamboman/mason-lspconfig.nvim',
@@ -75,6 +91,8 @@ require("lazy").setup({
             require("nvim-autopairs").setup {}
         end
     },
+    { 'akinsho/bufferline.nvim' }, -- Bufferline for tab management
+    { 'moll/vim-bbye' },
     -- Prettier neovim
     { 'lukas-reineke/indent-blankline.nvim' },
     { 'goolord/alpha-nvim' },
@@ -82,6 +100,7 @@ require("lazy").setup({
     { 'karb94/neoscroll.nvim' },
     { 'kyazdani42/nvim-tree.lua' },
     { 'kyazdani42/nvim-web-devicons' },
+      { 'ahmedkhalf/project.nvim' },
     { 'lewis6991/gitsigns.nvim' },
     { 'nvim-lualine/lualine.nvim' },
 })
